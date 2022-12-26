@@ -1,0 +1,16 @@
+﻿@model Bootstrap.Models.EntityFramework.Orders
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("New", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ShipName)
+        @Html.TextBoxFor(m => m.ShipName, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.OrderID)
+    <button type="submit" class="btn btn-success">Update</button>
+}
